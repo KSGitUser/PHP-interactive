@@ -1,0 +1,13 @@
+{
+    "name": "php/interactive-lesson9",
+    "authors": [
+        {
+            "name": "Krikun S",
+            "email": "rusakk@mail.ru"
+        }
+    ],
+    "require": {
+        "robmorgan/phinx": "^0.10.6",
+        "fzaninotto/faker": "^1.8"
+    }
+}
