@@ -1,6 +1,7 @@
 <?php
 session_start();
-spl_autoload_register();
+require_once __DIR__.'/../vendor/autoload.php';
+/* spl_autoload_register(); */
 
 if(!isset($_SERVER['PHP_AUTH_USER']) || 
   !($_SERVER['PHP_AUTH_USER'] == 'hello' && $_SERVER['PHP_AUTH_PW'] == 'php')) {
@@ -9,23 +10,21 @@ if(!isset($_SERVER['PHP_AUTH_USER']) ||
     exit();
   }
 
+require_once('../services/db_connect.php');
+require_once('../views/header.php');
 
-
-require_once('db_connect.php');
-require_once('header.php');
-
-require('menu.php');
+require('../views/menu.php');
 
 
 
 
      if (empty($_GET['catalog_id'])) {
-      require_once('catalogs.php');
+      require_once('../views/product/catalogs.php');
     } else {
    
-      require_once('list.php');
+      require_once('../views/product/list.php');
     } 
 
-require('menu.php');
+require('../views/menu.php');
     
-require_once('footer.php');
+require_once('../views/footer.php');
